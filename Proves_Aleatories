@@ -1,0 +1,6 @@
+load fisheriris
+X = [meas(:,1), meas(:,2)];
+Y = nominal(ismember(species,'setosa'))
+P = cvpartition(Y,'Holdout',0.20);
+svmStruct = svmtrain(X(P.training,:),Y(P.training),'showplot',true);
+
