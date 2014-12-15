@@ -1,0 +1,43 @@
+import os
+import sys
+import numpy
+
+from modules.features.VisualVocabulary import VisualVocabulary
+from modules.features.TextVocabulary import TextVocabulary
+
+def usage():
+    print "This script will generate a visual vocabulary."
+
+
+def main(argv):
+    # Define the default values for the option
+    pathHome = os.path.expanduser('~')
+    pathWork = os.path.join( pathHome, 'Project')
+    pathDirImages = os.path.join(pathWork, 'Images', 'Train')
+    pathDirDatasets = os.path.join(pathWork, 'Datasets')
+    pathFileDatasetTrain = os.path.join(pathWork, 'Datasets', 'Train.txt')
+    pathVocabulary = os.path.join(pathWork, 'Vocabulary', 'vocabulary.p')
+
+    _flagVerbose=False
+    
+    vocabularySize=256                  # Amount of visual words
+    maxNumImages=10                     # Maximum amount of images to consider
+
+    # Init the Visual Vocabulary
+    visualVocabulary = VisualVocabulary(flagVerbose=_flagVerbose)
+    
+    
+    visualVocabulary.buildFromImageCollection( pathFileDatasetTrain, 
+                                              pathDirImages, 
+                                              'jpg', 
+                                              vocabularySize, 
+                                              maxNumImages )
+    
+    
+    visualVocabulary.saveToDisk( pathVocabulary )
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
+    
+def run(argv):
+    main()
