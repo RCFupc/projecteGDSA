@@ -1,0 +1,92 @@
+
+NumPy	http://www.scipy.org/install.html
+
+NumPy contains a powerful N-dimensional array object, sophisticated broadcasting functions, tools for integrating C/C++ and Fortran code, and useful linear algebra, Fourier transform, and random number capabilities.
+
+Size: 3.70 MB
+Version: 1.8.1
+Build: 1
+Dependencies:
+	 MKL 10.3-1
+	 
+
+
+Intel MKL	 https://software.intel.com/en-us/intel-mkl
+	
+The Intel Math Kernel Library (MKL) is a library of highly optimized, extensively threaded math routines for science, engineering, and financial applications that require maximum performance. Core math functions include BLAS, LAPACK, ScaLAPACK, Sparse Solvers, Fast Fourier Transforms, Vector Math, and more. Offering performance optimizations for current and next-generation Intel processors, it includes improved integration with Microsoft Visual Studio, Eclipse, and XCode. Intel MKL allows for full integration of the Intel Compatibility OpenMP run-time library for greater Windows/Linux cross-platform compatibility.
+
+Size: 40.29 MB
+Version: 10.3
+Build: 1
+
+
+
+Scikits learn	http://scikit-learn.org/stable/
+
+scikits.learn is a Python module integrating classic machine learning algorithms in the tightly-nit world of scientific Python packages (numpy, scipy, matplotlib). It aims to provide simple and efficient solutions to learning problems that are accessible to everybody and reusable in various contexts: machine-learning as a versatile tool for science and engineering.
+
+Size: 4.41 MB
+Version: 0.15.2
+Build: 1
+Dependencies:
+	 MKL 10.3
+	 numpy 1.8.1
+	 scipy 0.14.0
+
+
+
+Opencv 	http://opencv.org
+
+OpenCV is released under a BSD license and hence it’s free for both academic and commercial use. It has C++, C, Python and Java interfaces and supports Windows, Linux, Mac OS, iOS and Android. OpenCV was designed for computational efficiency and with a strong focus on real-time applications. Written in optimized C/C++, the library can take advantage of multi-core processing. Enabled with OpenCL, it can take advantage of the hardware acceleration of the underlying heterogeneous compute platform. Adopted all around the world, OpenCV has more than 47 thousand people of user community and estimated number of downloads exceeding 9 million. Usage ranges from interactive art, to mines inspection, stitching maps on the web or through advanced robotics.
+
+Size: 9.54 MB
+Version: 2.4.9
+Build: 1
+Dependencies:
+	 numpy 1.8.1
+
+
+
+Cluster		https://pypi.python.org/pypi/cluster/1.1.0b1
+
+This package is in the "Community" (PyPi mirror) repo, which contains >10,000 untested ("as is") packages. Some packages are licensed under GPL or other licenses which are inappropriate for some users. If you need an updated version or if the installation fails due to unmet dependencies, the following article Installing external packages into Canopy Python may help you with installing it. 
+
+Size: 18.23 kB
+Version: 1.1.2
+Build: 1
+
+
+
+Pycluster  http://bonsai.hgc.jp/~mdehoon/software/cluster/software.htm
+
+The open source clustering software available here implement the most commonly used clustering methods for gene expression data analysis. The clustering methods can be used in several ways. Cluster 3.0 provides a Graphical User Interface to access to the clustering routines. Python users can access the clustering routines by using Pycluster, which is an extension module to Python.
+
+Size: 57.08 kB
+Version: 1.50
+Build: 7
+Dependencies:
+	 numpy 1.8.1
+
+
+
+PyYaml	http://pyyaml.org
+
+YAML is a data serialization format designed for human readability and interaction with scripting languages. PyYAML is a YAML parser and emitter for Python. PyYAML features a complete YAML 1.1 parser, Unicode support, pickle support, capable extension API, and sensible error messages. PyYAML supports standard YAML tags and provides Python-specific tags that allow to represent an arbitrary Python object. PyYAML is applicable for a broad range of tasks from complex configuration files to object serialization and persistance.
+
+Size: 98.85 kB
+Version: 3.11
+Build: 1
+
+
+
+Nltk		http://www.nltk.org
+
+Natural Language Toolkit or, more commonly, NLTK is a suite of libraries and programs for symbolic and statistical natural language processing (NLP) for the Python programming language. NLTK includes graphical demonstrations and sample data. It is accompanied by extensive documentation, including a book that explains the underlying concepts behind the language processing tasks supported by the toolkit.
+
+Size: 2.33 MB
+Version: 3.0.0
+Build: 1
+Dependencies:
+	 numpy
+	 PyYAML
+
