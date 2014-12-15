@@ -1,0 +1,69 @@
+# @c Copyright (C) 2014 
+# @c Free Software Foundation, Inc.
+# @c See the file README for copying conditions. 
+
+import os
+from modules.features.TfidfExtractor import TfidfExtractor
+from modules.features.TextVocabulary import TextVocabulary
+
+print 'Comença el procés de TFIDF'
+
+def processLabel(TfidfExtractor, pathDirTfidfs, datasetLabel):
+    print 'HOLA'
+    # Directory where the images are located
+    pathDirImages = os.path.join( pathDirImagesBase, datasetLabel ) 
+    if not os.path.exists(pathDirImages):
+        print 'ERROR: Directory not found ' + pathDirImages
+        return
+     
+    # File containing the image IDs   
+    pathFileDataset = os.path.join( pathDirDatasets, datasetLabel + '.txt' )
+    if not os.path.exists(pathFileDataset):
+        print 'ERROR: File not found ' + pathFileDataset
+        return    
+        
+    print 'Extracting Tfidf from ' + pathFileDataset + "..."
+
+    # Directory for Tfidfs
+    pathDirTfidfLabel = os.path.join( pathDirTfidfs, datasetLabel )    
+    if not os.path.exists(pathDirTfidfLabel):
+        os.makedirs(pathDirTfidfLabel)
+        
+    TfidfExtractor.processTxtFile( pathFileDataset, pathDirTfidfLabel)
+    
+    
+# Main
+if __name__ == "__main__":
+    pathHome = os.path.expanduser('~')
+    pathWork = os.path.join( pathHome,'Project')
+    pathDirImagesBase = os.path.join(pathWork, 'Images')
+    pathDirDatasets = os.path.join(pathWork, 'Datasets')
+    pathFileVocabulary = os.path.join( pathWork, 'Vocabulary','vocabulary.p' )
+    pathDirTfidfs = os.path.join(pathWork, 'Tfidf')
+            
+    pathFileMetadata = os.path.join(pathDirDatasets,'sed2013_task2_dataset_train.csv')
+    # pathFileDatasetTrain = os.path.join(pathWork, 'Datasets/train.txt')
+    pathFileTags = os.path.join(pathDirDatasets,'sed2013_task2_dataset_train_tags.csv')
+                            
+    # Build the textual vocabulary saving the most frequent terms
+    textVocabulary = TextVocabulary( )
+    textVocabulary.buildFromTags(pathFileTags, 5000)
+    pathFileVocabulary =os.path.join( pathWork, 'Vocabulary', 'text.p')
+    textVocabulary.saveToDisk(pathFileVocabulary)
+        
+    # Init the TF/IDF extractor
+    tfidfExtractor = TfidfExtractor(pathFileMetadata, 
+                                        pathFileTags, 
+                                        pathFileVocabulary,
+                                        flagVerbose=False)
+        
+            
+    # Process the train dataset
+    # Se crea una carpeta con las características de cada imagen de Train
+    processLabel(tfidfExtractor, pathDirTfidfs, 'Train')
+        
+    # Process the test dataset
+    # Se crea una carpeta con las características de cada imagen de Test
+    processLabel(tfidfExtractor, pathDirTfidfs, 'Test')
+        
+    print "Extracting TF-IDF... done."
