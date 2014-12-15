@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-
+# @c Copyright (C) 2014 
+# @c Free Software Foundation, Inc.
+# @c See the file README for copying conditions. 
 #Metadata Social Event Classification: AVALUADOR
 
 import pandas as pd
