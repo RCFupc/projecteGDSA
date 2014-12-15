@@ -1,0 +1,36 @@
+
+
+Classificació d’imatges social event 2013:
+
+1_datasets
+
+Registrar les imatges amb dades concretes objectes del tipus Dataset
+Carpeta Test i Train creació de directori.txt
+
+2_vocabulary
+
+A partir de les imatges de train, creació de dos vocabularis tipus TextVocabulari el el Textual, a partir del descriptor TF-IDF, i el el visual a partir del SIFT.
+
+3_bof
+
+Creació de vectors tipus BofExtractor a partir del vocabulari i del fitxer dataset creat a l’apartat 1
+
+4_tfidf
+
+Creació dels vectors descriptors de text TfidfExtractor
+
+5_annotation
+
+Creació de objecte ontology.p on hi si emmagatzemen les etiquetes semàntiques, i  anotation.p on s’afegeix la informació de la classe a que pertany cada imatge i l’etiqueta semàntica que i correspon.
+
+6_models
+
+Creació del model trainer a partir dels objectes d’anotation, entrenar al classificador
+
+7_Detector
+
+Classificació de les imatges a partir del model. Creació del objecte detector, retorna un objecte del tipus anotation amb el nom de la classe semàntica que ha assignat
+
+8_evaluation
+
+Comprovació del etiquetat. Veritat del terreny per a cada esdeveniment, precisió, record i F1-Score
