@@ -1,4 +1,6 @@
 
+This script contains a list of additional libraries to install
+
 NumPy	http://www.scipy.org/install.html
 
 NumPy contains a powerful N-dimensional array object, sophisticated broadcasting functions, tools for integrating C/C++ and Fortran code, and useful linear algebra, Fourier transform, and random number capabilities.
